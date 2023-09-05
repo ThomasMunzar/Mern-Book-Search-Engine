@@ -11,6 +11,14 @@ import {
 import Auth from '../utils/auth';
 import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+import {addBook} from '../utils/mutations';
+import {login} from '../utils/mutations';
+import {addUser} from '../utils/mutations';
+import {saveBook} from '../utils/mutations';
+import {removeBook} from '../utils/mutations';
+
+import {me} from '../utils/queries'
+
 
 const SearchBooks = () => {
   // create state for holding returned google api data

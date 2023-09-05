@@ -1,3 +1,50 @@
+const typeDefs = `
+type Query: {
+    me: User
+}
+type User {
+    _id: ID!
+    name: String!
+    email: String!
+    bookCount: Number
+    savedBooks: [Book]
+  }
+
+  type Book {
+    bookId: ID!
+    authors: [String]
+    description: String
+    title: String!
+    image: String
+    link: String
+
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+input bookInput{
+    bookId: ID!
+    authors: [String]
+    description: String
+    title: String!
+    image: String
+    link: String 
+}
+
+  type Mutation {
+   login(email:String, passwork:String): Auth
+   addUser(user:String, email:String, password: String):Auth
+   saveBook(bookData: bookInput)
+   removeBook(bookId: ID!): User
+
+  }
+
+
+`
+
 
 // * `typeDefs.js`: Define the necessary `Query` and `Mutation` types:
 
